@@ -80,7 +80,6 @@ class WMDataProvider: NSObject {
                     })
                     return
                 }
-                // Create Multiple Weather models if there are any
                 
                 if let prodList = resultsDictionary["products"] as? Array<Dictionary<String, AnyObject>> {
                     let allProducts = WMProductModelParserUtil.parseProductData(jsonArray: prodList)
