@@ -20,6 +20,7 @@
 		70B35DBF1FE5FA62007020ED /* WMDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DBE1FE5FA62007020ED /* WMDataProvider.swift */; };
 		70B35DC31FE60022007020ED /* WMProductModelParserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DC21FE60022007020ED /* WMProductModelParserUtil.swift */; };
 		70B35DC71FE70FA3007020ED /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DC61FE70FA3007020ED /* UIColor+Extention.swift */; };
+		70B35DCC1FE71605007020ED /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DCA1FE71605007020ED /* MBProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,9 @@
 		70B35DBE1FE5FA62007020ED /* WMDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMDataProvider.swift; sourceTree = "<group>"; };
 		70B35DC21FE60022007020ED /* WMProductModelParserUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMProductModelParserUtil.swift; sourceTree = "<group>"; };
 		70B35DC61FE70FA3007020ED /* UIColor+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
+		70B35DC91FE71604007020ED /* WalmartLabTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WalmartLabTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		70B35DCA1FE71605007020ED /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = "../../../../../../../Downloads/MBProgressHUD-master/MBProgressHUD.m"; sourceTree = "<group>"; };
+		70B35DCB1FE71605007020ED /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = "../../../../../../../Downloads/MBProgressHUD-master/MBProgressHUD.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +92,7 @@
 		70B35DA41FE5C166007020ED /* 3rdPartyApis */ = {
 			isa = PBXGroup;
 			children = (
+				70B35DC81FE715EF007020ED /* MBProgressHUD */,
 				70B35DA51FE5C64B007020ED /* FloatRatingView */,
 			);
 			path = 3rdPartyApis;
@@ -176,6 +181,16 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		70B35DC81FE715EF007020ED /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DCB1FE71605007020ED /* MBProgressHUD.h */,
+				70B35DCA1FE71605007020ED /* MBProgressHUD.m */,
+				70B35DC91FE71604007020ED /* WalmartLabTest-Bridging-Header.h */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -208,6 +223,7 @@
 				TargetAttributes = {
 					70B35D861FE5B5BD007020ED = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -252,6 +268,7 @@
 				70B35D9D1FE5B8D4007020ED /* WMDetailViewController.swift in Sources */,
 				70B35DC71FE70FA3007020ED /* UIColor+Extention.swift in Sources */,
 				70B35D8D1FE5B5BD007020ED /* WMHomeViewController.swift in Sources */,
+				70B35DCC1FE71605007020ED /* MBProgressHUD.m in Sources */,
 				70B35DA71FE5C64B007020ED /* FloatRatingView.swift in Sources */,
 				70B35DC31FE60022007020ED /* WMProductModelParserUtil.swift in Sources */,
 				70B35DAE1FE5CBBA007020ED /* WMHomeTableViewCell.swift in Sources */,
@@ -394,11 +411,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mitra.WalmartLabTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WalmartLabTest/3rdPartyApis/MBProgressHUD/WalmartLabTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -408,11 +428,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mitra.WalmartLabTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WalmartLabTest/3rdPartyApis/MBProgressHUD/WalmartLabTest-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

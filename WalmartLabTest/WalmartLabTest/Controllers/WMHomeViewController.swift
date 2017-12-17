@@ -73,6 +73,7 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     fileprivate func loadNextData() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
         WMProductManager.shared.getNextProductList { (data, error) in
             if error != nil {
                 // Show alert Error
@@ -81,6 +82,7 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
                 self.allProducts = data
                 self.tableView.reloadData()
             }
+            MBProgressHUD.hide(for: self.view, animated: true)
         }
     }
     
