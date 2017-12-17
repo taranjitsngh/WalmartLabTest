@@ -8,20 +8,36 @@
 
 /* Begin PBXBuildFile section */
 		70B35D8B1FE5B5BD007020ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35D8A1FE5B5BD007020ED /* AppDelegate.swift */; };
-		70B35D8D1FE5B5BD007020ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35D8C1FE5B5BD007020ED /* ViewController.swift */; };
+		70B35D8D1FE5B5BD007020ED /* WMHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35D8C1FE5B5BD007020ED /* WMHomeViewController.swift */; };
 		70B35D901FE5B5BD007020ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B35D8E1FE5B5BD007020ED /* Main.storyboard */; };
 		70B35D921FE5B5BD007020ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 70B35D911FE5B5BD007020ED /* Assets.xcassets */; };
 		70B35D951FE5B5BD007020ED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 70B35D931FE5B5BD007020ED /* LaunchScreen.storyboard */; };
+		70B35D9D1FE5B8D4007020ED /* WMDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35D9C1FE5B8D4007020ED /* WMDetailViewController.swift */; };
+		70B35DA71FE5C64B007020ED /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DA61FE5C64B007020ED /* FloatRatingView.swift */; };
+		70B35DAE1FE5CBBA007020ED /* WMHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DAD1FE5CBB9007020ED /* WMHomeTableViewCell.swift */; };
+		70B35DB51FE5CE82007020ED /* WMProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DB41FE5CE82007020ED /* WMProductModel.swift */; };
+		70B35DBC1FE5FA07007020ED /* WMProductManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DBB1FE5FA07007020ED /* WMProductManager.swift */; };
+		70B35DBF1FE5FA62007020ED /* WMDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DBE1FE5FA62007020ED /* WMDataProvider.swift */; };
+		70B35DC31FE60022007020ED /* WMProductModelParserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DC21FE60022007020ED /* WMProductModelParserUtil.swift */; };
+		70B35DC71FE70FA3007020ED /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DC61FE70FA3007020ED /* UIColor+Extention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		70B35D871FE5B5BD007020ED /* WalmartLabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalmartLabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		70B35D8A1FE5B5BD007020ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		70B35D8C1FE5B5BD007020ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		70B35D8C1FE5B5BD007020ED /* WMHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMHomeViewController.swift; sourceTree = "<group>"; };
 		70B35D8F1FE5B5BD007020ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		70B35D911FE5B5BD007020ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		70B35D941FE5B5BD007020ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		70B35D961FE5B5BD007020ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B35D9C1FE5B8D4007020ED /* WMDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMDetailViewController.swift; sourceTree = "<group>"; };
+		70B35DA61FE5C64B007020ED /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		70B35DAD1FE5CBB9007020ED /* WMHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMHomeTableViewCell.swift; sourceTree = "<group>"; };
+		70B35DB41FE5CE82007020ED /* WMProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMProductModel.swift; sourceTree = "<group>"; };
+		70B35DBB1FE5FA07007020ED /* WMProductManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMProductManager.swift; sourceTree = "<group>"; };
+		70B35DBE1FE5FA62007020ED /* WMDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMDataProvider.swift; sourceTree = "<group>"; };
+		70B35DC21FE60022007020ED /* WMProductModelParserUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMProductModelParserUtil.swift; sourceTree = "<group>"; };
+		70B35DC61FE70FA3007020ED /* UIColor+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extention.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				70B35D891FE5B5BD007020ED /* WalmartLabTest */,
+				70B35D961FE5B5BD007020ED /* Info.plist */,
 				70B35D881FE5B5BD007020ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,14 +71,109 @@
 		70B35D891FE5B5BD007020ED /* WalmartLabTest */ = {
 			isa = PBXGroup;
 			children = (
+				70B35DC51FE70F8F007020ED /* Extentions */,
+				70B35DA41FE5C166007020ED /* 3rdPartyApis */,
 				70B35D8A1FE5B5BD007020ED /* AppDelegate.swift */,
-				70B35D8C1FE5B5BD007020ED /* ViewController.swift */,
+				70B35DB01FE5CBD4007020ED /* Controllers */,
+				70B35DBD1FE5FA49007020ED /* DataProvider */,
+				70B35DB91FE5F9D2007020ED /* Managers */,
+				70B35DB31FE5CE63007020ED /* Models */,
+				70B35DB21FE5CBF2007020ED /* Supporting Files */,
+				70B35DC01FE5FDF9007020ED /* Utils */,
+				70B35DAB1FE5CBB9007020ED /* Views */,
+			);
+			path = WalmartLabTest;
+			sourceTree = "<group>";
+		};
+		70B35DA41FE5C166007020ED /* 3rdPartyApis */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DA51FE5C64B007020ED /* FloatRatingView */,
+			);
+			path = 3rdPartyApis;
+			sourceTree = "<group>";
+		};
+		70B35DA51FE5C64B007020ED /* FloatRatingView */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DA61FE5C64B007020ED /* FloatRatingView.swift */,
+			);
+			path = FloatRatingView;
+			sourceTree = "<group>";
+		};
+		70B35DAB1FE5CBB9007020ED /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DAC1FE5CBB9007020ED /* WMHomeTableViewCell */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		70B35DAC1FE5CBB9007020ED /* WMHomeTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DAD1FE5CBB9007020ED /* WMHomeTableViewCell.swift */,
+			);
+			path = WMHomeTableViewCell;
+			sourceTree = "<group>";
+		};
+		70B35DB01FE5CBD4007020ED /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				70B35D8C1FE5B5BD007020ED /* WMHomeViewController.swift */,
+				70B35D9C1FE5B8D4007020ED /* WMDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		70B35DB21FE5CBF2007020ED /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
 				70B35D8E1FE5B5BD007020ED /* Main.storyboard */,
 				70B35D911FE5B5BD007020ED /* Assets.xcassets */,
 				70B35D931FE5B5BD007020ED /* LaunchScreen.storyboard */,
-				70B35D961FE5B5BD007020ED /* Info.plist */,
 			);
-			path = WalmartLabTest;
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		70B35DB31FE5CE63007020ED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DB41FE5CE82007020ED /* WMProductModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		70B35DB91FE5F9D2007020ED /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DBB1FE5FA07007020ED /* WMProductManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		70B35DBD1FE5FA49007020ED /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DBE1FE5FA62007020ED /* WMDataProvider.swift */,
+			);
+			path = DataProvider;
+			sourceTree = "<group>";
+		};
+		70B35DC01FE5FDF9007020ED /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DC21FE60022007020ED /* WMProductModelParserUtil.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		70B35DC51FE70F8F007020ED /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				70B35DC61FE70FA3007020ED /* UIColor+Extention.swift */,
+			);
+			path = Extentions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +248,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				70B35D8D1FE5B5BD007020ED /* ViewController.swift in Sources */,
+				70B35DBF1FE5FA62007020ED /* WMDataProvider.swift in Sources */,
+				70B35D9D1FE5B8D4007020ED /* WMDetailViewController.swift in Sources */,
+				70B35DC71FE70FA3007020ED /* UIColor+Extention.swift in Sources */,
+				70B35D8D1FE5B5BD007020ED /* WMHomeViewController.swift in Sources */,
+				70B35DA71FE5C64B007020ED /* FloatRatingView.swift in Sources */,
+				70B35DC31FE60022007020ED /* WMProductModelParserUtil.swift in Sources */,
+				70B35DAE1FE5CBBA007020ED /* WMHomeTableViewCell.swift in Sources */,
 				70B35D8B1FE5B5BD007020ED /* AppDelegate.swift in Sources */,
+				70B35DBC1FE5FA07007020ED /* WMProductManager.swift in Sources */,
+				70B35DB51FE5CE82007020ED /* WMProductModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,7 +395,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WalmartLabTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mitra.WalmartLabTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,7 +409,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = WalmartLabTest/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Mitra.WalmartLabTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
