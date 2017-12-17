@@ -26,7 +26,9 @@ class WMDataProvider: NSObject {
     
     fileprivate let apiKey = "97f633a0-7d0a-4026-abf7-fb66d5b887ad"
     fileprivate let baseURL = "https://walmartlabs-test.appspot.com/_ah/api/walmart/v1"
-    fileprivate let processingQueue = OperationQueue()
+    fileprivate let processingQueue = DispatchQueue.global(qos: DispatchQoS.QoSClass.utility)
+    fileprivate let mainQueue = DispatchQueue.main
+    
     
     // *********************************************************************************************
     // MARK: Public Methods
@@ -38,9 +40,7 @@ class WMDataProvider: NSObject {
          */
         
         guard let searchURL = productURL(pageNo, pageSize) else {
-            let APIError = NSError(domain: "WMError",
-                                   code: 0,
-                                   userInfo: [NSLocalizedFailureReasonErrorKey:"Unknown API response"])
+            let APIError = errorWithDiscription("Unknown API response", 0)
             completion(nil, APIError)
             return
         }
@@ -48,71 +48,64 @@ class WMDataProvider: NSObject {
         let searchRequest = URLRequest(url: searchURL)
         
         URLSession.shared.dataTask(with: searchRequest, completionHandler: { (data, response, error) in
-            
-            if let error = error {
-                let APIError = NSError(domain: "WMError",
-                                       code: 0,
-                                       userInfo: [NSLocalizedFailureReasonErrorKey:error.localizedDescription])
-                OperationQueue.main.addOperation({
-                    completion(nil, APIError)
-                })
-                return
-            }
-            
-            guard let _ = response as? HTTPURLResponse,
-                let data = data else {
-                    let APIError = NSError(domain: "WMError",
-                                           code: 0,
-                                           userInfo: [NSLocalizedFailureReasonErrorKey:"Unknown API response"])
-                    OperationQueue.main.addOperation({
+            self.processingQueue.async {
+                if let error = error {
+                    let APIError = self.errorWithDiscription(error.localizedDescription, 0)
+                    self.mainQueue.async {
                         completion(nil, APIError)
-                    })
-                    return
-            }
-            
-            do {
-                guard var resultsDictionary = try JSONSerialization.jsonObject(with: data,
-                                                                               options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String: AnyObject] else {
-                    
-                    let APIError = NSError(domain: "WMError", code: 0, userInfo: [NSLocalizedFailureReasonErrorKey:"Unknown API response"])
-                    OperationQueue.main.addOperation({
-                        completion(nil, APIError)
-                    })
-                    return
-                }
-                
-                if let prodList = resultsDictionary["products"] as? Array<Dictionary<String, AnyObject>> {
-                    let allProducts = WMProductModelParserUtil.parseProductData(jsonArray: prodList)
-                    if allProducts.count == 0 {
-                        let APIError = NSError(domain: "WMError",
-                                               code: 0,
-                                               userInfo: [NSLocalizedFailureReasonErrorKey:"Unable to parse response"])
-                        OperationQueue.main.addOperation({
-                            completion(nil, APIError)
-                        })
-                    } else {
-                        OperationQueue.main.addOperation({
-                            var result = [String: Any]()
-                            result["products"] = allProducts
-                            result["totalProducts"] = resultsDictionary["totalProducts"]
-                            result["pageNumber"] = resultsDictionary["pageNumber"]
-                            result["pageSize"] = resultsDictionary["pageSize"]
-                            completion(result, nil)
-                        })
                     }
+                    return
                 }
                 
-            } catch _ {
-                let APIError = NSError(domain: "WMError",
-                                       code: 0,
-                                       userInfo: [NSLocalizedFailureReasonErrorKey:"Unable to parse response"])
-                OperationQueue.main.addOperation({
-                    completion(nil, APIError)
-                })
+                guard let _ = response as? HTTPURLResponse,
+                    let data = data else {
+                        let APIError = self.errorWithDiscription("Unknown API response", 0)
+                        self.mainQueue.async {
+                            completion(nil, APIError)
+                        }
+                        return
+                }
+                
+                do {
+                    
+                    guard var resultsDictionary = try JSONSerialization.jsonObject(with: data,
+                                                                                   options: JSONSerialization.ReadingOptions(rawValue: 0)) as? [String: AnyObject] else {
+                        
+                        let APIError = self.errorWithDiscription("Invalid Response", 0)
+                        self.mainQueue.async {
+                            completion(nil, APIError)
+                        }
+                        return
+                    }
+                    
+                    if let prodList = resultsDictionary["products"] as? Array<Dictionary<String, AnyObject>> {
+                        let allProducts = WMProductModelParserUtil.parseProductData(jsonArray: prodList)
+                        if allProducts.count == 0 {
+                            let APIError = self.errorWithDiscription("Unable to parse response", 0)
+                            self.mainQueue.async {
+                                completion(nil, APIError)
+                            }
+                        } else {
+                            self.mainQueue.async {
+                                var result = [String: Any]()
+                                result["products"] = allProducts
+                                result["totalProducts"] = resultsDictionary["totalProducts"]
+                                result["pageNumber"] = resultsDictionary["pageNumber"]
+                                result["pageSize"] = resultsDictionary["pageSize"]
+                                completion(result, nil)
+                            }
+                        }
+                    }
+                    
+                } catch _ {
+                    let APIError = self.errorWithDiscription("Unknown API response", 0)
+                    self.mainQueue.async {
+                        completion(nil, APIError)
+                    }
 
-                return
+                    return
+                }
             }
-            
         }).resume()
     }
     
@@ -129,9 +122,10 @@ class WMDataProvider: NSObject {
         return url_
     }
     
-    fileprivate func errorWithDiscription(description: String) -> NSError {
-        let err = NSError(domain: "WMError", code: 0, userInfo:
-            [NSLocalizedFailureReasonErrorKey:"Unable to parse response"])
+    fileprivate func errorWithDiscription(_ description: String, _ code: Int) -> NSError {
+        let err = NSError(domain: "WMError",
+                          code: code,
+                          userInfo: [NSLocalizedFailureReasonErrorKey:description])
         
         return err
     }

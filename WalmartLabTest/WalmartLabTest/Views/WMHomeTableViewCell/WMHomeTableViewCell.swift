@@ -37,7 +37,6 @@ class WMHomeTableViewCell: UITableViewCell {
             
             if let product = product {
                 // SD WebImageView extentions take care of image caching
-                
                 icon.sd_setImage(with: URL(string: product.productImageUrl ?? ""),
                                  placeholderImage: UIImage(named: "Placeholder.jpeg"))
                 title.text = NSLocalizedString(product.productName, comment: "")

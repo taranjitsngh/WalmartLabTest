@@ -83,5 +83,21 @@ extension WMProductModel {
         }
     }
     
+    func attributedStortDiscription() -> NSAttributedString {
+        let htmlData = shortDescription!.data(using: String.Encoding(rawValue: String.Encoding.unicode.rawValue))
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+        let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
+        
+        return attributedString
+    }
+    
+    func attributedLongDescription() -> NSAttributedString {
+        let htmlData = longDescription!.data(using: String.Encoding(rawValue: String.Encoding.unicode.rawValue))
+        let options = [NSAttributedString.DocumentReadingOptionKey.documentType: NSAttributedString.DocumentType.html]
+        let attributedString = try! NSAttributedString(data: htmlData!, options: options, documentAttributes: nil)
+        
+        return attributedString
+    }
+    
 }
 

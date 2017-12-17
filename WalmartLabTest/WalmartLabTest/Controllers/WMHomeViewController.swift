@@ -32,7 +32,10 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.tableFooterView = UIView(frame: CGRect())
+       // tableView.tableFooterView = UIView(frame: CGRect())
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingBlock: {
+            self.loadNextData()
+        })
         loadNextData()
     }
 
@@ -52,6 +55,7 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
         if let cell = cell as? WMHomeTableViewCell {
             _configureProductCell(cell, forRow: indexPath.row)
         }
+    
         return cell
     }
     
@@ -82,6 +86,7 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
                 self.allProducts = data
                 self.tableView.reloadData()
             }
+            self.tableView.mj_footer.endRefreshing()
             MBProgressHUD.hide(for: self.view, animated: true)
         }
     }

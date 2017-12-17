@@ -27,7 +27,7 @@ class WMProductManager: NSObject {
     
     fileprivate var allProducts = [WMProductModel]()
     fileprivate var currentPage = 0
-    fileprivate let pageSize = 30
+    fileprivate let pageSize = 10
     
     // *************************************************************************************************
     // # MARK: - Private Property
