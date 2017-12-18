@@ -6,11 +6,17 @@
 //  Copyright © 2017 Mitra di company. All rights reserved.
 //
 
+// *************************************************************************************************
+// # MARK: - Imports
+
 import UIKit
+
+// *************************************************************************************************
+// # MARK: - Class Definition
 
 class WMProductManager: NSObject {
     
-    // *************************************************************************************************
+    // *********************************************************************************************
     // # MARK: - Private init
     
     fileprivate override init() {
@@ -27,10 +33,18 @@ class WMProductManager: NSObject {
     
     fileprivate var allProducts = [WMProductModel]()
     fileprivate var currentPage = 0
-    fileprivate let pageSize = 10
+    fileprivate let pageSize = 30
     
     // *************************************************************************************************
-    // # MARK: - Private Property
+    // # MARK: - Public Methods
+    
+    func getNextItemFrom(item: WMProductModel) -> WMProductModel? {
+        if let index = allProducts.index(of: item), index + 1 < allProducts.count {
+            return allProducts[index + 1]
+        }
+        
+        return nil
+    }
     
     
     func getNextProductList(completion: @escaping (_ results: [WMProductModel]?, _ error : NSError?) -> Void) {
@@ -47,6 +61,14 @@ class WMProductManager: NSObject {
             self.allProducts.append(contentsOf: products)
             completion(self.allProducts, nil)
         }
+    }
+    
+    func getPreviousItemFrom(item: WMProductModel) -> WMProductModel? {
+        if let index = allProducts.index(of: item), index - 1 > 0 {
+            return allProducts[index - 1]
+        }
+        
+        return nil
     }
     
 }

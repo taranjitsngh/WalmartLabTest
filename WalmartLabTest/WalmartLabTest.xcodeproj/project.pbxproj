@@ -214,11 +214,11 @@
 		70B35D891FE5B5BD007020ED /* WalmartLabTest */ = {
 			isa = PBXGroup;
 			children = (
-				70B35DC51FE70F8F007020ED /* Extentions */,
 				70B35DA41FE5C166007020ED /* 3rdPartyApis */,
 				70B35D8A1FE5B5BD007020ED /* AppDelegate.swift */,
 				70B35DB01FE5CBD4007020ED /* Controllers */,
 				70B35DBD1FE5FA49007020ED /* DataProvider */,
+				70B35DC51FE70F8F007020ED /* Extentions */,
 				70B35DB91FE5F9D2007020ED /* Managers */,
 				70B35DB31FE5CE63007020ED /* Models */,
 				70B35DB21FE5CBF2007020ED /* Supporting Files */,
@@ -231,10 +231,10 @@
 		70B35DA41FE5C166007020ED /* 3rdPartyApis */ = {
 			isa = PBXGroup;
 			children = (
+				70B35DA51FE5C64B007020ED /* FloatRatingView */,
+				70B35DC81FE715EF007020ED /* MBProgressHUD */,
 				70B35E231FE72087007020ED /* MJRefresh */,
 				70B35DCD1FE71846007020ED /* SDWebImage */,
-				70B35DC81FE715EF007020ED /* MBProgressHUD */,
-				70B35DA51FE5C64B007020ED /* FloatRatingView */,
 			);
 			path = 3rdPartyApis;
 			sourceTree = "<group>";
@@ -266,8 +266,8 @@
 		70B35DB01FE5CBD4007020ED /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				70B35D8C1FE5B5BD007020ED /* WMHomeViewController.swift */,
 				70B35D9C1FE5B8D4007020ED /* WMDetailViewController.swift */,
+				70B35D8C1FE5B5BD007020ED /* WMHomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -275,9 +275,9 @@
 		70B35DB21FE5CBF2007020ED /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				70B35D8E1FE5B5BD007020ED /* Main.storyboard */,
 				70B35D911FE5B5BD007020ED /* Assets.xcassets */,
 				70B35D931FE5B5BD007020ED /* LaunchScreen.storyboard */,
+				70B35D8E1FE5B5BD007020ED /* Main.storyboard */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";

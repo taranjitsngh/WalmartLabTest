@@ -25,6 +25,8 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: Private Properties
     
     fileprivate var allProducts = [WMProductModel]()
+    fileprivate var selectedRow = 0
+    fileprivate let productDetailSegueIdentifier = "ProductDetailVCSegue"
     
     // *********************************************************************************************
     // MARK: View Controllers Overrides
@@ -32,7 +34,6 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // tableView.tableFooterView = UIView(frame: CGRect())
         tableView.mj_footer = MJRefreshAutoFooter(refreshingBlock: {
             self.loadNextData()
         })
@@ -66,7 +67,20 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        selectedRow = indexPath.row
+    }
+    
+    // *********************************************************************************************
+    // MARK: Segue
+    
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let identifier = segue.identifier,
+              let cell = sender as? WMHomeTableViewCell else { return }
+    
+        if identifier == productDetailSegueIdentifier {
+            guard let controller = segue.destination as? WMDetailViewController else { return }
+            controller.product = cell.product
+        }
     }
     
     // *********************************************************************************************
