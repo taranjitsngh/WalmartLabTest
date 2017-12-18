@@ -178,9 +178,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-Lu-Oe1">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gh3-Lu-Oe1">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProductMainCell" rowHeight="189" id="AWv-Tq-Zmg" customClass="WMDetailTableViewCell" customModule="WalmartLabTest" customModuleProvider="target">
@@ -311,6 +310,7 @@
                                                     <rect key="frame" x="5" y="0.0" width="365" height="151.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="151.5" id="MIC-9u-RyE"/>
+                                                        <constraint firstAttribute="width" constant="365" id="qFB-Rl-hjv"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
@@ -369,6 +369,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="gh3-Lu-Oe1" firstAttribute="trailing" secondItem="vO3-FO-dWt" secondAttribute="trailing" id="4DL-sJ-ML9"/>
+                            <constraint firstItem="gh3-Lu-Oe1" firstAttribute="bottom" secondItem="vO3-FO-dWt" secondAttribute="bottom" id="8dA-KO-e2g"/>
+                            <constraint firstItem="gh3-Lu-Oe1" firstAttribute="leading" secondItem="vO3-FO-dWt" secondAttribute="leading" id="9Ai-rw-bos"/>
+                            <constraint firstItem="gh3-Lu-Oe1" firstAttribute="top" secondItem="vO3-FO-dWt" secondAttribute="top" id="yG7-gu-Tlc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vO3-FO-dWt"/>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="BW8-35-dmb" appends="YES" id="wYl-sI-2nf"/>
