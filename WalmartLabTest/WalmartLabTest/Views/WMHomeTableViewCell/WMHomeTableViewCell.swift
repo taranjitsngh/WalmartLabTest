@@ -39,10 +39,10 @@ class WMHomeTableViewCell: UITableViewCell {
                 // SD WebImageView extentions take care of image caching
                 icon.sd_setImage(with: URL(string: product.productImageUrl ?? ""),
                                  placeholderImage: UIImage(named: "Placeholder.jpeg"))
-                title.text = NSLocalizedString(product.productName, comment: "")
+                title.text = product.productName
                 ratingView.rating = product.reviewRating!
-                rating.text = String(format: "%.1f", product.reviewRating!)
-                ratingCount.text = String(format: "(%d)", product.reviewCount!)
+                rating.text = product.ratingText()
+                ratingCount.text = product.reviewCountText()
                 price.text = product.price
                 stockStatus.text = product.stockStatus()
                 if product.inStock {
@@ -55,7 +55,7 @@ class WMHomeTableViewCell: UITableViewCell {
     }
     
     // *************************************************************************************************
-    // MARK: View Controller Overrides
+    // MARK: View Overrides
     
     override func awakeFromNib() {
         super.awakeFromNib()

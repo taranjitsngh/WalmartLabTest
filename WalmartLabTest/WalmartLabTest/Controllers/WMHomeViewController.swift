@@ -17,6 +17,12 @@ import UIKit
 class WMHomeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     // *********************************************************************************************
+    // MARK: Constants
+    
+    fileprivate let productDetailSegueIdentifier = "ProductDetailVCSegue"
+    fileprivate let tableCellRowHeight: CGFloat = 97.0
+    
+    // *********************************************************************************************
     // MARK: IBOutlets
     
     @IBOutlet weak var tableView: UITableView!
@@ -26,7 +32,7 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     
     fileprivate var allProducts = [WMProductModel]()
     fileprivate var selectedRow = 0
-    fileprivate let productDetailSegueIdentifier = "ProductDetailVCSegue"
+    
     
     // *********************************************************************************************
     // MARK: View Controllers Overrides
@@ -48,6 +54,7 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: TableView DataSource and Delegates
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        tableView.isHidden = allProducts.count == 0
         return allProducts.count
     }
     
@@ -63,7 +70,7 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         
-        return 97.0
+        return tableCellRowHeight
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -93,16 +100,26 @@ class WMHomeViewController: UIViewController, UITableViewDataSource, UITableView
     fileprivate func loadNextData() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         WMProductManager.shared.getNextProductList { (data, error) in
+            self.tableView.mj_footer.endRefreshing()
+            MBProgressHUD.hide(for: self.view, animated: true)
             if error != nil {
-                // Show alert Error
+                self.showAlert(error?.localizedDescription ?? "Failure")
+                return
             }
             if let data = data, data.count > 0 {
                 self.allProducts = data
-                self.tableView.reloadData()
+                self.tableView.reloadData() // Will not reload the whole table, just load the new rows
+                
             }
-            self.tableView.mj_footer.endRefreshing()
-            MBProgressHUD.hide(for: self.view, animated: true)
         }
+    }
+    
+    fileprivate func showAlert(_ message: String) {
+        let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+        hud.mode = .text
+        hud.label.text = NSLocalizedString(message, comment: "")
+        hud.offset = CGPoint(x: 0.0, y: MBProgressMaxOffset)
+        hud.hide(animated: true, afterDelay: 0.5)
     }
     
 }

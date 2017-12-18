@@ -99,5 +99,16 @@ extension WMProductModel {
         return attributedString
     }
     
+    func ratingText() -> String {
+        
+       return String(format: "%.1f", reviewRating!)
+        
+    }
+    
+    func reviewCountText() -> String {
+        
+        return String(format: "(%d)", reviewCount!)
+    }
+    
 }
 

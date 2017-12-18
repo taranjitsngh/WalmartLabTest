@@ -67,7 +67,24 @@
 		70B35E631FE72087007020ED /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B35E4D1FE72087007020ED /* UIScrollView+MJExtension.m */; };
 		70B35E641FE72087007020ED /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B35E4F1FE72087007020ED /* UIScrollView+MJRefresh.m */; };
 		70B35E651FE72087007020ED /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 70B35E511FE72087007020ED /* UIView+MJExtension.m */; };
+		70B35E6E1FE788A7007020ED /* WMDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35E6D1FE788A7007020ED /* WMDetailTableViewCell.swift */; };
+		70B35E851FE79C77007020ED /* UIColor+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DC61FE70FA3007020ED /* UIColor+Extention.swift */; };
+		70B45BA61FE79D43008BCA25 /* UIColorExtentionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B45BA51FE79D43008BCA25 /* UIColorExtentionTest.swift */; };
+		70B45BA81FE79EAC008BCA25 /* WMProductModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B45BA71FE79EAC008BCA25 /* WMProductModelTest.swift */; };
+		70B45BA91FE79EB2008BCA25 /* WMProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DB41FE5CE82007020ED /* WMProductModel.swift */; };
+		70B706D91FE7A30800B0B7E6 /* WMProductModelParserUtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B706D81FE7A30800B0B7E6 /* WMProductModelParserUtilTest.swift */; };
+		70B706DA1FE7A30B00B0B7E6 /* WMProductModelParserUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70B35DC21FE60022007020ED /* WMProductModelParserUtil.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		70B35E7D1FE79AEF007020ED /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 70B35D7F1FE5B5BD007020ED /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 70B35D861FE5B5BD007020ED;
+			remoteInfo = WalmartLabTest;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		70B35D871FE5B5BD007020ED /* WalmartLabTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WalmartLabTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,10 +198,23 @@
 		70B35E4F1FE72087007020ED /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		70B35E501FE72087007020ED /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		70B35E511FE72087007020ED /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		70B35E6D1FE788A7007020ED /* WMDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMDetailTableViewCell.swift; sourceTree = "<group>"; };
+		70B35E781FE79AEF007020ED /* UnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70B35E7C1FE79AEF007020ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70B45BA51FE79D43008BCA25 /* UIColorExtentionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtentionTest.swift; sourceTree = "<group>"; };
+		70B45BA71FE79EAC008BCA25 /* WMProductModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMProductModelTest.swift; sourceTree = "<group>"; };
+		70B706D81FE7A30800B0B7E6 /* WMProductModelParserUtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMProductModelParserUtilTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		70B35D841FE5B5BD007020ED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B35E751FE79AEF007020ED /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -199,6 +229,7 @@
 			children = (
 				70B35D891FE5B5BD007020ED /* WalmartLabTest */,
 				70B35D961FE5B5BD007020ED /* Info.plist */,
+				70B35E791FE79AEF007020ED /* UnitTests */,
 				70B35D881FE5B5BD007020ED /* Products */,
 			);
 			sourceTree = "<group>";
@@ -207,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				70B35D871FE5B5BD007020ED /* WalmartLabTest.app */,
+				70B35E781FE79AEF007020ED /* UnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -250,6 +282,7 @@
 		70B35DAB1FE5CBB9007020ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				70B35E6C1FE788A7007020ED /* WMDetailTableViewCell */,
 				70B35DAC1FE5CBB9007020ED /* WMHomeTableViewCell */,
 			);
 			path = Views;
@@ -487,6 +520,25 @@
 			path = Header;
 			sourceTree = "<group>";
 		};
+		70B35E6C1FE788A7007020ED /* WMDetailTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				70B35E6D1FE788A7007020ED /* WMDetailTableViewCell.swift */,
+			);
+			path = WMDetailTableViewCell;
+			sourceTree = "<group>";
+		};
+		70B35E791FE79AEF007020ED /* UnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				70B35E7C1FE79AEF007020ED /* Info.plist */,
+				70B45BA51FE79D43008BCA25 /* UIColorExtentionTest.swift */,
+				70B45BA71FE79EAC008BCA25 /* WMProductModelTest.swift */,
+				70B706D81FE7A30800B0B7E6 /* WMProductModelParserUtilTest.swift */,
+			);
+			path = UnitTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -507,6 +559,24 @@
 			productReference = 70B35D871FE5B5BD007020ED /* WalmartLabTest.app */;
 			productType = "com.apple.product-type.application";
 		};
+		70B35E771FE79AEF007020ED /* UnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70B35E7F1FE79AEF007020ED /* Build configuration list for PBXNativeTarget "UnitTests" */;
+			buildPhases = (
+				70B35E741FE79AEF007020ED /* Sources */,
+				70B35E751FE79AEF007020ED /* Frameworks */,
+				70B35E761FE79AEF007020ED /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				70B35E7E1FE79AEF007020ED /* PBXTargetDependency */,
+			);
+			name = UnitTests;
+			productName = UnitTests;
+			productReference = 70B35E781FE79AEF007020ED /* UnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -521,6 +591,11 @@
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
+					};
+					70B35E771FE79AEF007020ED = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 70B35D861FE5B5BD007020ED;
 					};
 				};
 			};
@@ -538,6 +613,7 @@
 			projectRoot = "";
 			targets = (
 				70B35D861FE5B5BD007020ED /* WalmartLabTest */,
+				70B35E771FE79AEF007020ED /* UnitTests */,
 			);
 		};
 /* End PBXProject section */
@@ -551,6 +627,13 @@
 				70B35D921FE5B5BD007020ED /* Assets.xcassets in Resources */,
 				70B35E601FE72087007020ED /* MJRefresh.bundle in Resources */,
 				70B35D901FE5B5BD007020ED /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		70B35E761FE79AEF007020ED /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -573,6 +656,7 @@
 				70B35E0C1FE71846007020ED /* SDWebImageCoder.m in Sources */,
 				70B35E131FE71846007020ED /* SDWebImageGIFCoder.m in Sources */,
 				70B35E181FE71846007020ED /* UIButton+WebCache.m in Sources */,
+				70B35E6E1FE788A7007020ED /* WMDetailTableViewCell.swift in Sources */,
 				70B35E521FE72087007020ED /* MJRefreshAutoFooter.m in Sources */,
 				70B35D8D1FE5B5BD007020ED /* WMHomeViewController.swift in Sources */,
 				70B35E081FE71846007020ED /* NSData+ImageContentType.m in Sources */,
@@ -620,7 +704,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		70B35E741FE79AEF007020ED /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70B45BA61FE79D43008BCA25 /* UIColorExtentionTest.swift in Sources */,
+				70B45BA91FE79EB2008BCA25 /* WMProductModel.swift in Sources */,
+				70B45BA81FE79EAC008BCA25 /* WMProductModelTest.swift in Sources */,
+				70B35E851FE79C77007020ED /* UIColor+Extention.swift in Sources */,
+				70B706DA1FE7A30B00B0B7E6 /* WMProductModelParserUtil.swift in Sources */,
+				70B706D91FE7A30800B0B7E6 /* WMProductModelParserUtilTest.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		70B35E7E1FE79AEF007020ED /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 70B35D861FE5B5BD007020ED /* WalmartLabTest */;
+			targetProxy = 70B35E7D1FE79AEF007020ED /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		70B35D8E1FE5B5BD007020ED /* Main.storyboard */ = {
@@ -782,6 +887,36 @@
 			};
 			name = Release;
 		};
+		70B35E801FE79AEF007020ED /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Mitra.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalmartLabTest.app/WalmartLabTest";
+			};
+			name = Debug;
+		};
+		70B35E811FE79AEF007020ED /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = UnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Mitra.UnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WalmartLabTest.app/WalmartLabTest";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -799,6 +934,15 @@
 			buildConfigurations = (
 				70B35D9A1FE5B5BD007020ED /* Debug */,
 				70B35D9B1FE5B5BD007020ED /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70B35E7F1FE79AEF007020ED /* Build configuration list for PBXNativeTarget "UnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				70B35E801FE79AEF007020ED /* Debug */,
+				70B35E811FE79AEF007020ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
